@@ -34,6 +34,11 @@
             document.body.removeChild(input);
             document.execCommand("copy")
             console.log(url)
+            return url
+        }
+
+        function openurl() {
+            window.open(gen())
         }
     </script>
 </head>
@@ -44,12 +49,14 @@
     学号:<input type="text" id="student_id" name="student_id" value="2019693758123"><br>
     本人联系电话:<input type="text" id="tele_phone" name="tele_phone" value="19574839962"><br>
     外出地点:<input type="text" id="location" name="location" value="就在长沙理工大学附近"><br>
-<!--    身份证号（随便输18位就好）:<input type="text" id="identity_card" name="identity_card" value="591281230812931123"><br>-->
+    身份证号（随便输18位就好）:<input type="text" id="identity_card" name="identity_card" value="591281230812931123"><br>
     请假原因:<input type="text" id="reason" name="reason" value="就拿个快递"><br>
     辅导员名字:<input type="text" id="coach_name" name="coach_name" value="肖凤"><br>
     紧急联系人名字:<input type="text" id="emergency_contant" name="emergency_contant" value="肖淘气"><br>
     紧急联系人电话:<input type="text" id="emergency_tele" name="emergency_tele" value="19671548861"><br>
     <button type="button" onclick="gen()" value="生成假条链接"> 复制生成的请假条网址</button>
+    <br>
+    <button type="button" onclick="openurl()"> 打开我的请假条</button>
 </form>
 </body>
 </html>
