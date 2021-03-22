@@ -17,14 +17,14 @@ func main() {
 	})
 	r.GET("/leave", func(ctx *gin.Context) {
 		//这些都是用户输入的部分
-		name := ctx.Query("name")
-		student_id := ctx.Query("student_id")
-		reason := ctx.Query("reason")
-		coach_name := ctx.Query("coach_name")
-		tele_phone := ctx.Query("tele_phone")
-		identity_card := ctx.Query("identity_card") //身份证ID
-		emergency_contant := ctx.Query("emergency_contant")
-		emergency_tele := ctx.Query("emergency_tele")
+		name := ctx.DefaultQuery("name", "名字还没输呢")
+		student_id := ctx.DefaultQuery("student_id", "学号还没输呢")
+		reason := ctx.DefaultQuery("reason", "没有理由，就是想出去")
+		coach_name := ctx.DefaultQuery("coach_name", "我没辅导员")
+		tele_phone := ctx.DefaultQuery("tele_phone", "110")
+		identity_card := ctx.DefaultQuery("identity_card", "12344321") //身份证ID
+		emergency_contant := ctx.DefaultQuery("emergency_contant", "猴赛雷")
+		emergency_tele := ctx.DefaultQuery("emergency_tele", "192891800012")
 		//用户输入部分截止
 		//随机生成身份证:
 		//identity_card := rand_string(18) //还是取消了把，感觉生成的太离谱了
