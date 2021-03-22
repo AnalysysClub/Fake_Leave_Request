@@ -57,7 +57,7 @@ func main() {
 			"approval_num":      approval_num,
 		})
 	})
-	r.Run(":8081")
+	r.Run("192.168.3.102:8081")
 }
 
 func rand_string(length int) string {
