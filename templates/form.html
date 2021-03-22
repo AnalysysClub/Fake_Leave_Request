@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <script>
+        function gen() {
+            console.log("正在拷贝!");
+            let name = document.getElementById("name").value;
+            let student_id = document.getElementById("student_id").value;
+            let reason = document.getElementById("reason").value;
+            let coach_name = document.getElementById("coach_name").value;
+            let tele_phone = document.getElementById("tele_phone").value;
+            let identity_card = document.getElementById("identity_card").value;
+            let location = document.getElementById("location").value;
+            let emergency_contant = document.getElementById("emergency_contant").value;
+            let emergency_tele = document.getElementById("emergency_tele").value;
+            let url = "http://localhost:8081/leave?name=" + name + "&student_id=" + student_id + "&reason=" + reason +
+                "&coach_name=" + coach_name + "&identity_card=" + identity_card + "&tele_phone=" + tele_phone +
+                "&location=" + location + "&emergency_tele=" + emergency_tele +
+                "&emergency_contant=" + emergency_contant
+            ;
+
+            const input = document.createElement('INPUT');
+            input.style.opacity = 0;
+            input.style.position = 'absolute';
+            input.style.left = '-100000px';
+            document.body.appendChild(input);
+            input.value = url;
+            input.select();
+            input.setSelectionRange(0, url.length);
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            document.execCommand("copy")
+            console.log(url)
+        }
+    </script>
+</head>
+<body>
+<h1>👋你好呀,填一下下面的表格</h1>
+<form>
+    名字:<input type="text" id="name" name="name" value="123456"><br>
+    学号:<input type="text" id="student_id" name="student_id" value="123456"><br>
+    本人联系电话:<input type="text" id="tele_phone" name="tele_phone" value="123456"><br>
+    外出地点:<input type="text" id="location" name="location" value="123456"><br>
+    身份证号（随便输18位就好）:<input type="text" id="identity_card" name="identity_card" value="123456"><br>
+    请假原因:<input type="text" id="reason" name="reason" value="123456"><br>
+    辅导员名字:<input type="text" id="coach_name" name="coach_name" value="123456"><br>
+    紧急联系人名字:<input type="text" id="emergency_contant" name="emergency_contant" value="123456"><br>
+    紧急联系人电话:<input type="text" id="emergency_tele" name="emergency_tele" value="123456"><br>
+    <button type="button" onclick="gen()" value="生成假条链接"> 复制生成的请假条网址</button>
+</form>
+</body>
+</html>
