@@ -29,6 +29,10 @@ func main() {
 		time_post := []byte(time_now)
 		time_post[9] += 1
 		time_postpone := string(time_post)
+		//时间生成完毕
+		//审批编号随机生成
+		approval_num :=
+		//审批编号随机生成结束
 		location := ctx.Query("location")
 		ctx.HTML(http.StatusOK, "detail.html", gin.H{
 			"name":              name,
