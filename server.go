@@ -25,6 +25,7 @@ func main() {
 		identity_card := ctx.Query("identity_card") //身份证ID
 		emergency_contant := ctx.Query("emergency_contant")
 		emergency_tele := ctx.Query("emergency_tele")
+		location := ctx.Query("location")
 		//用户输入部分截止
 		//随机生成身份证:
 		//identity_card := rand_string(18) //还是取消了把，感觉生成的太离谱了
@@ -41,7 +42,6 @@ func main() {
 
 		approval_num := time_now[:4] + time_now[5:7] + time_now[8:10] + rand_string(12)
 		//审批编号随机生成结束
-		location := ctx.Query("location")
 		ctx.HTML(http.StatusOK, "detail.html", gin.H{
 			"name":              name,
 			"student_id":        student_id,

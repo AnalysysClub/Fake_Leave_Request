@@ -7,6 +7,9 @@
         function gen() {
             console.log("正在拷贝!");
             let name = document.getElementById("name").value;
+            if (name === null){
+                alert("????")
+            }
             let student_id = document.getElementById("student_id").value;
             let reason = document.getElementById("reason").value;
             let coach_name = document.getElementById("coach_name").value;
