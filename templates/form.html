@@ -3,27 +3,50 @@
     <title>易班Fake请假条</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="https://favicon.yandex.net/favicon/v2/https://www.csust.edu.cn/">
     <script>
         function gen() {
             console.log("正在拷贝!");
             let name = document.getElementById("name").value;
-            if (name === null){
-                alert("????")
+            if (name === "") {
+                name = "默认名字"
             }
             let student_id = document.getElementById("student_id").value;
+            if (student_id === "") {
+                student_id = "1234567765432"
+            }
             let reason = document.getElementById("reason").value;
+            if (reason === "") {
+                reason = "拿个快递"
+            }
             let coach_name = document.getElementById("coach_name").value;
+            if (coach_name === "") {
+                coach_name = "默认名字"
+            }
             let tele_phone = document.getElementById("tele_phone").value;
+            if (tele_phone === "") {
+                tele_phone = "1234567653"
+            }
             let identity_card = document.getElementById("identity_card").value;
+            if (identity_card === "") {
+                identity_card = "1234567653123984"
+            }
             let location = document.getElementById("location").value;
+            if (location === "") {
+                location = "长沙市内"
+            }
             let emergency_contant = document.getElementById("emergency_contant").value;
+            if (emergency_contant === "") {
+                emergency_contant = "默认"
+            }
             let emergency_tele = document.getElementById("emergency_tele").value;
-            let url = "http://localhost:8081/leave?name=" + name + "&student_id=" + student_id + "&reason=" + reason +
+            if (emergency_tele === "") {
+                emergency_tele = "1234567653"
+            }
+            let url = "localhost:8081/leave?name=" + name + "&student_id=" + student_id + "&reason=" + reason +
                 "&coach_name=" + coach_name + "&identity_card=" + identity_card + "&tele_phone=" + tele_phone +
                 "&location=" + location + "&emergency_tele=" + emergency_tele +
-                "&emergency_contant=" + emergency_contant
-            ;
-
+                "&emergency_contant=" + emergency_contant;
             const input = document.createElement('INPUT');
             input.style.opacity = 0;
             input.style.position = 'absolute';
@@ -36,6 +59,7 @@
             document.body.removeChild(input);
             document.execCommand("copy")
             console.log(url)
+            alert("已经复制到📋")
             return url
         }
 
@@ -45,42 +69,42 @@
     </script>
 </head>
 <body>
-<div class="grid bg-gray-50">
+<div class="grid bg-gray-200">
     <h1 class="text-3xl font-serif text-pink-500 text-center tracking-widest">👋生成易班请假条 for <span
             class="tracking-wider ">CSUSTer</span></h1>
     <div class="grid overflow-scroll">
         <span class="text-gray-500 text-sm font-semibold "> 名字:</span class="text-gray-500 text-sm font-semibold "><input
-            class="p-3 text-gray-700 bg-blue-200 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:rounded-2xl focus:ring-indigo-200 focus:ring-opacity-5"
-            type="text" id="name" name="name" value="Your Names"><br>
+            class="p-3 outline-none text-gray-700 bg-blue-200 block w-full rounded-2xl border-pink-300 shadow-sm focus:border-indigo-300 focus:ring focus:rounded-2xl focus:ring-blue-100 focus:ring-opacity-2"
+            type="text" id="name" name="name" value="" placeholder="Your_Names"><br>
         <span class="text-gray-500 text-sm font-semibold "> 学号:</span class="text-gray-500 text-sm font-semibold ">
         <input
-                class="p-3 text-gray-700 bg-blue-200 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-5 focus:rounded-2xl"
-                type="text" id="student_id" name="student_id" value="2019693758123"><br>
+                class="p-3 outline-none text-gray-700 bg-blue-200 block w-full rounded-2xl border-pink-300 shadow-sm focus:border-indigo-300 focus:ring focus:rounded-2xl focus:ring-blue-100 focus:ring-opacity-2"
+                type="text" id="student_id" name="student_id" value="" placeholder="2019693758123"><br>
         <span class="text-gray-500 text-sm font-semibold ">本人联系电话:</span class="text-gray-500 text-sm font-semibold ">
         <input
-                class="p-3 text-gray-700 bg-blue-200 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-5 focus:rounded-2xl"
-                type="text" id="tele_phone" name="tele_phone" value="19574839962"><br>
+                class="p-3 outline-none text-gray-700 bg-blue-200 block w-full rounded-2xl border-pink-300 shadow-sm focus:border-indigo-300 focus:ring focus:rounded-2xl focus:ring-blue-100 focus:ring-opacity-2"
+                type="text" id="tele_phone" name="tele_phone" value="" placeholder="19574839962"><br>
         <span class="text-gray-500 text-sm font-semibold ">外出地点: </span class="text-gray-500 text-sm font-semibold ">
         <input
-                class="p-3 text-gray-700 bg-blue-200 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-5 focus:rounded-2xl"
-                type="text" id="location" name="location" value="就在长沙理工大学附近"><br>
+                class="p-3 outline-none text-gray-700 bg-blue-200 block w-full rounded-2xl border-pink-300 shadow-sm focus:border-indigo-300 focus:ring focus:rounded-2xl focus:ring-blue-100 focus:ring-opacity-2"
+                type="text" id="location" name="location" value="" placeholder="就在长沙理工大学附近"><br>
         <span class="text-gray-500 text-sm font-semibold ">身份证号（随便输18位就好）:</span class="text-gray-500 text-sm font-semibold ">
         <input
-                class="p-3 text-gray-700 bg-blue-200 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-5 focus:rounded-2xl"
-                type="text" id="identity_card" name="identity_card" value="591281230812931123"><br>
+                class="p-3 outline-none text-gray-700 bg-blue-200 block w-full rounded-2xl border-pink-300 shadow-sm focus:border-indigo-300 focus:ring focus:rounded-2xl focus:ring-blue-100 focus:ring-opacity-2"
+                type="text" id="identity_card" name="identity_card" value="" placeholder="591281230812931123"><br>
         <span class="text-gray-500 text-sm font-semibold "> 请假原因:</span class="text-gray-500 text-sm font-semibold ">
         <input
-                class="p-3 text-gray-700 bg-blue-200 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-5 focus:rounded-2xl"
-                type="text" id="reason" name="reason" value="就拿个快递"><br>
+                class="p-3 outline-none text-gray-700 bg-blue-200 block w-full rounded-2xl border-pink-300 shadow-sm focus:border-indigo-300 focus:ring focus:rounded-2xl focus:ring-blue-100 focus:ring-opacity-2"
+                type="text" id="reason" name="reason" value="" placeholder="就拿个快递"><br>
         <span class="text-gray-500 text-sm font-semibold "> 辅导员名字:</span class="text-gray-500 text-sm font-semibold "><input
-            class="p-3 text-gray-700 bg-blue-200 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-5 focus:rounded-2xl"
-            type="text" id="coach_name" name="coach_name" value="肖凤"><br>
+            class="p-3 outline-none text-gray-700 bg-blue-200 block w-full rounded-2xl border-pink-300 shadow-sm focus:border-indigo-300 focus:ring focus:rounded-2xl focus:ring-blue-100 focus:ring-opacity-2"
+            type="text" id="coach_name" name="coach_name" value="" placeholder="肖凤"><br>
         <span class="text-gray-500 text-sm font-semibold "> 紧急联系人名字: </span class="text-gray-500 text-sm font-semibold "><input
-            class="p-3 text-gray-700 bg-blue-200 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-5 focus:rounded-2xl"
-            type="text" id="emergency_contant" name="emergency_contant" value="肖淘气"><br>
+            class="p-3 outline-none text-gray-700 bg-blue-200 block w-full rounded-2xl border-pink-300 shadow-sm focus:border-indigo-300 focus:ring focus:rounded-2xl focus:ring-blue-100 focus:ring-opacity-2"
+            type="text" id="emergency_contant" name="emergency_contant" value="" placeholder="小淘气"><br>
         <span class="text-gray-500 text-sm font-semibold "> 紧急联系人电话: </span class="text-gray-500 text-sm font-semibold "><input
-            class="p-3 text-gray-700 bg-blue-200 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-5 focus:rounded-2xl"
-            type="text" id="emergency_tele" name="emergency_tele" value="19671548861"><br>
+            class="p-3 outline-none text-gray-700 bg-blue-200 block w-full rounded-2xl border-pink-300 shadow-sm focus:border-indigo-300 focus:ring focus:rounded-2xl focus:ring-blue-100 focus:ring-opacity-2"
+            type="text" id="emergency_tele" name="emergency_tele" value="" placeholder="19671548861"><br>
         <button class="mx-12 font-serif bg-blue-700 hover:bg-blue-900 text-white font-bold py-3 px-4 rounded"
                 type="button" onclick="gen()" value="生成假条链接"> 复制生成的请假条网址
         </button>
