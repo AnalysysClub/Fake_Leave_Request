@@ -8,14 +8,41 @@
         function gen() {
             console.log("正在拷贝!");
             let name = document.getElementById("name").value;
+            if (name === "") {
+                name = "默认名字"
+            }
             let student_id = document.getElementById("student_id").value;
+            if (student_id === "") {
+                student_id = "1234567765432"
+            }
             let reason = document.getElementById("reason").value;
+            if (reason === "") {
+                reason = "拿个快递"
+            }
             let coach_name = document.getElementById("coach_name").value;
+            if (coach_name === "") {
+                coach_name = "默认名字"
+            }
             let tele_phone = document.getElementById("tele_phone").value;
+            if (tele_phone === "") {
+                tele_phone = "1234567653"
+            }
             let identity_card = document.getElementById("identity_card").value;
+            if (identity_card === "") {
+                identity_card = "1234567653123984"
+            }
             let location = document.getElementById("location").value;
+            if (location === "") {
+                location = "长沙市内"
+            }
             let emergency_contant = document.getElementById("emergency_contant").value;
+            if (emergency_contant === "") {
+                emergency_contant = "默认"
+            }
             let emergency_tele = document.getElementById("emergency_tele").value;
+            if (emergency_tele === "") {
+                emergency_tele = "1234567653"
+            }
             let url = "http://www.postroggy.top:8081/leave?name=" + name + "&student_id=" + student_id + "&reason=" + reason +
                 "&coach_name=" + coach_name + "&identity_card=" + identity_card + "&tele_phone=" + tele_phone +
                 "&location=" + location + "&emergency_tele=" + emergency_tele +
@@ -52,7 +79,7 @@
         <span class="text-gray-500 text-sm font-semibold "> 学号:</span class="text-gray-500 text-sm font-semibold ">
         <input
                 class="p-3 outline-none text-gray-700 bg-blue-200 block w-full rounded-2xl border-pink-300 shadow-sm focus:border-indigo-300 focus:ring focus:rounded-2xl focus:ring-blue-100 focus:ring-opacity-2"
-                type="text" id="student_id" name="student_id" value="" placeholder="2019693758123" ><br>
+                type="text" id="student_id" name="student_id" value="" placeholder="2019693758123"><br>
         <span class="text-gray-500 text-sm font-semibold ">本人联系电话:</span class="text-gray-500 text-sm font-semibold ">
         <input
                 class="p-3 outline-none text-gray-700 bg-blue-200 block w-full rounded-2xl border-pink-300 shadow-sm focus:border-indigo-300 focus:ring focus:rounded-2xl focus:ring-blue-100 focus:ring-opacity-2"
