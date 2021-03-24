@@ -31,7 +31,9 @@ func main() {
 		//生成现在的时间
 		time_now_real := time.Now().Format("2006-01-02 15:04")
 		time_now_conv := []byte(time_now_real)
-		time_now_conv[12] -= 1
+		if time_now_conv[12] != '0' {
+			time_now_conv[12] -= 1
+		}
 		time_now := string(time_now_conv)
 		time_post := []byte(time_now_real)
 		time_post[9] += 1
